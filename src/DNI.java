@@ -1,10 +1,17 @@
 import javax.print.attribute.standard.NumberUp;
+import java.util.logging.Level;
 
 public class DNI {
     private  static final char[] LETRAS = {'T','R','W','A','G','M','Y','F','P',
             'D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'};
     private int number;
     private char letter;
+
+    public DNI () {
+        number = 0;
+        letter = 'T';
+
+    }
 
     public DNI(int number) {
         this.number = number;
@@ -41,8 +48,15 @@ public class DNI {
 
     public void setNumber(int number) {
         this.number = number;
+        char realLetter = LETRAS[number % 23];
+        if (realLetter != letter) {
+            this.number = -this.number;
+        }
     }
 
+    public static char letterForDni(int number) {
+
+    }
     public boolean correctDni() {
        return number >= 0;
     }
