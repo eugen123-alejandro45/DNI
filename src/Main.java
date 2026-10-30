@@ -7,7 +7,9 @@ public class Main {
         DNI dni2 = new DNI("13245678J");
         System.out.println(dni2);
         System.out.println(dni2.correctDni());
+        System.out.println("");
         System.out.println(dni2.getNumber());
         System.out.println(dni2.getLetter());
+        System.out.println(dni.letterForDni());
     }
 }

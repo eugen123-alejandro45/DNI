@@ -55,8 +55,12 @@ public class DNI {
     }
 
     public static char letterForDni(int number) {
-
+        return LETRAS[number % 23];
     }
+    public static String NifForDni (int number) {
+        return "" + number+ "-" + letterForDni(number);
+    }
+
     public boolean correctDni() {
        return number >= 0;
     }
